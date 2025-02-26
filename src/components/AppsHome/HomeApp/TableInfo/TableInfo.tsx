@@ -4,10 +4,6 @@ import type {
   forecastDayType,
 } from "../../type/TypeList";
 
-type alertType = {
-  message: string;
-};
-
 type TableInfoProps = {
   current: currentType;
   alerts: alertType[];

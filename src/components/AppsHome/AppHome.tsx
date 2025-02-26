@@ -4,7 +4,7 @@ import HomeInfo from "./HomeApp/HomeInfo.tsx";
 
 export default function AppHome() {
   const [city, setCity] = useState<string>("Antananarivo");
-  const [listCity, setListCity] = useState<string[]>([
+  const [listCity] = useState<string[]>([
     "antananarivo",
     "toliara",
     "fianarantsoa",

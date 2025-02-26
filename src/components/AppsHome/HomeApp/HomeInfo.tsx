@@ -31,8 +31,12 @@ export default function HomeInfo({ city }: HomeInfoProps) {
       {location ? <Location location={location} /> : <p>Loading...</p>}
       <div className="w-full  flex justify-center items-center  gap-x-2 mt-4">
         <div className="w-4/4 h-[800px] border-1 border-dashed border-gray-600 rounded-md   flex  gap-x-2 p-2">
-          {data && current && alert && forecast && (
-            <TableInfo current={current} alerts={alert} forecast={forecast} />
+          {data && current && alerts && forecast && (
+            <TableInfo
+              current={current}
+              alerts={alerts.alert}
+              forecast={{ forecastday: forecast }}
+            />
           )}
         </div>
       </div>
