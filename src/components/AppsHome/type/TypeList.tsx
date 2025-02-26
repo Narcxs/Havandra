@@ -6,7 +6,9 @@ export type APIDATATYPE = {
     alert: alertType[];
   };
   current: currentType;
-  forecast: forecastDayType[];
+  forecast: {
+    forecastday: forecastDayType[];
+  };
   location: LocationType;
 };
 

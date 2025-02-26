@@ -14,6 +14,8 @@ export default function HomeInfo({ city }: HomeInfoProps) {
           `https://api.weatherapi.com/v1/forecast.json?key=73a097f7acc74720812185151251802&q=${city}&days=1&aqi=yes&alerts=yes`
         );
         const data = await response.json();
+        console.log("API Response:", data);
+        console.log("Forecast data:", data.forecast);
         setData(data);
       } catch (error) {
         console.error(
@@ -35,7 +37,7 @@ export default function HomeInfo({ city }: HomeInfoProps) {
             <TableInfo
               current={current}
               alerts={alerts.alert}
-              forecast={{ forecastday: forecast }}
+              forecast={{ forecastday: data.forecast.forecastday }}
             />
           )}
         </div>
