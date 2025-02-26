@@ -92,7 +92,8 @@ export default function TableInfo({
         </div>
         <div className="w-full h-full bg-gray-900 rounded-md">
           <div className="py-3.5 px-3.5">
-            {forecast.forecastday &&
+            {Array.isArray(forecast.forecastday) &&
+            forecast.forecastday.length > 0 ? (
               forecast.forecastday.map((day, index) => (
                 <div
                   key={index}
@@ -137,7 +138,14 @@ export default function TableInfo({
                     <hr className="w-full border-gray-700 mt-4" />
                   )}
                 </div>
-              ))}
+              ))
+            ) : (
+              <div className="py-3.5 px-3.5 flex justify-center items-center">
+                <p className="text-white text-base">
+                  Aucune prévision disponible
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
